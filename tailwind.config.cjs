@@ -1,3 +1,4 @@
+const forms = require('@tailwindcss/forms')
 const config = {
 	mode: "jit",
 	purge: [
@@ -6,7 +7,9 @@ const config = {
 	theme: {
 		extend: {},
 	},
-	plugins: [],
+	plugins: [
+		forms(),
+	],
 };
 
 module.exports = config;
