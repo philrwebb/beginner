@@ -1,5 +1,1 @@
-<script>
-    import PersonalDetails from '../components/PersonalDetails.svelte';
-</script>
-
-<PersonalDetails />
+<div class="h-1 m-5 p-5">Main</div>

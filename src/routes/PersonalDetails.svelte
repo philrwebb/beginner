@@ -1,22 +1,37 @@
-<script>
+<script context="module">
+  export const load = async () => {
+    return {
+      props: {
+        companywebsite: "https://www.google.com",
+        about: "this is a test",
+        firstname: "John",
+        lastname: "Doe",
+        email: "prw@gmail.com",
+        country: "Australia",
+        streetaddress: "24 Bridges Rise",
+        city: "KIARA",
+        state: "WA",
+        postalcode: "6054",
+      },
+    };
+  }
 </script>
 
-<!--
-  This example requires Tailwind CSS v2.0+ 
-  
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
--->
+<script>
+import { loop_guard } from "svelte/internal";
+
+  export let companywebsite = "";
+  export let about = "";
+  export let firstname = "";
+  export let lastname = "";
+  export let email = "";
+  export let country = "";
+  export let streetaddress = "";
+  export let city = "";
+  export let state = "";
+  export let postalcode = "";
+</script>
+
 <div class="p-4 m-4">
   <div>
     <div class="md:grid md:grid-cols-3 md:gap-6">
@@ -53,6 +68,7 @@
                       id="company-website"
                       class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300"
                       placeholder="www.example.com"
+                      value={companywebsite}
                     />
                   </div>
                 </div>
@@ -72,6 +88,7 @@
                     rows="3"
                     class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
                     placeholder="you@example.com"
+                    value={about}
                   />
                 </div>
                 <p class="mt-2 text-sm text-gray-500">
@@ -206,6 +223,7 @@
                     id="first-name"
                     autocomplete="given-name"
                     class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                    value={firstname}
                   />
                 </div>
 
@@ -221,6 +239,7 @@
                     id="last-name"
                     autocomplete="family-name"
                     class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                    value={lastname}
                   />
                 </div>
 
@@ -236,6 +255,7 @@
                     id="email-address"
                     autocomplete="email"
                     class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                    value={email}
                   />
                 </div>
 
@@ -250,11 +270,13 @@
                     name="country"
                     autocomplete="country"
                     class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    value={country}
+                    on:change="{(e) => console.log(e)}"
                   >
-                    <option>United States</option>
-                    <option>Australia</option>
-                    <option>Canada</option>
-                    <option>Mexico</option>
+                    <option id="US">United States</option>
+                    <option id="AUS">Australia</option>
+                    <option id="CAN">Canada</option>
+                    <option id="MEX">Mexico</option>
                   </select>
                 </div>
 
@@ -270,6 +292,7 @@
                     id="street-address"
                     autocomplete="street-address"
                     class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                    value={streetaddress}
                   />
                 </div>
 
@@ -283,6 +306,7 @@
                     name="city"
                     id="city"
                     class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                    value={city}
                   />
                 </div>
 
@@ -297,6 +321,7 @@
                     name="state"
                     id="state"
                     class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                    value={state}
                   />
                 </div>
 
@@ -312,6 +337,7 @@
                     id="postal-code"
                     autocomplete="postal-code"
                     class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                    value={postalcode}
                   />
                 </div>
               </div>
