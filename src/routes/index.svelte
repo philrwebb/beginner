@@ -1,1 +1,1 @@
-<div class="h-1 m-5 p-5">Main</div>
+<div class="text-4xl font-semibold m-4 p-4">Main</div>
