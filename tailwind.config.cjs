@@ -8,7 +8,8 @@ const config = {
 		extend: {},
 	},
 	plugins: [
-		forms(),
+		require('@tailwindcss/forms'),
+		require('daisyui'),
 	],
 };
 
