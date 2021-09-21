@@ -1,10 +1,10 @@
-# create-svelte
+# Svelte Project using tailwindcss and daisyui
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte);
+Demonstration of some tailwindcss forms (using a forms plugin) and daisyui components.
 
-## Creating a project
+## Installing
 
-If you're seeing this, you've probably already done this step. Congrats!
+Clone the project:
 
 ```bash
 # create a new project in the current directory
